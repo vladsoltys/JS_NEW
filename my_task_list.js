@@ -144,3 +144,19 @@ const fib = (n) => {
 };
 
 // console.log(fib(9))
+
+// X. Генерація пароля (допоміг ChatGPT)
+
+const generatePassword = (length) => {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let password = '';
+
+  for (let i = 0; i < length; i++) {
+    // Тут треба вибрати випадковий символ з chars і додати до password
+    password += chars[Math.floor(Math.random() * chars.length)]
+  }
+
+  return password;
+};
+
+// console.log(generatePassword(12))
