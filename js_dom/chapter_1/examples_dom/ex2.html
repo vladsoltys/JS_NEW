@@ -15,9 +15,22 @@
     <li>Пункт 3</li>
     <li>Пункт 4</li>
   </ul>
+  <ul>
+    <li>Пункт 4</li>
+    <li>Пункт 5</li>
+  </ul>
+  <ul>
+    <li>Пункт 6</li>
+    <li>Пункт 7</li>
+  </ul>
 
   <script>
-
+    let elements = document.querySelectorAll('ul > li:first-child');
+    console.log(elements);
+    for (let element of elements) {
+      element.style.color = 'gray';
+      element.innerHTML = 'Новое значение'
+    }
   </script>
 </body>
 </html>
