@@ -13,7 +13,10 @@
   </ul>
 
   <script>
-
+    let list = document.querySelector('.list');
+    let item = document.querySelector('.item');
+    console.log(list.contains(item)); // true
+    console.log(item.contains(list)); // false
   </script>
 </body>
 </html>

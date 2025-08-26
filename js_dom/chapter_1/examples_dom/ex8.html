@@ -14,7 +14,14 @@
   </div>
 
   <script>
+    // Заполнение абзаца текста
+    let strs = ["Имя", "Фамилия", "Отчество"];
 
+    document.querySelector("p").textContent = `
+      ${strs[0]} - ${strs[1]} - ${strs[2]}`;
+
+    console.log(document.querySelector("div").textContent);
+    console.log(document.querySelector("div").innerHTML);
   </script>
 </body>
 </html>

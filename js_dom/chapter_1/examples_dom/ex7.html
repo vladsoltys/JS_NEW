@@ -12,7 +12,14 @@
   <h3>Заголовок 3 уровня</h3>
 
   <script>
-
+    let strs = ["Элемент1", "Элемент2", "Элемент3"];
+    document.body.innerHTML = `
+      <ul>
+        <li>${strs[0]}</li>
+        <li>${strs[1]}</li>
+        <li>${strs[2]}</li>
+      </ul>
+    `;
   </script>
 </body>
 </html>

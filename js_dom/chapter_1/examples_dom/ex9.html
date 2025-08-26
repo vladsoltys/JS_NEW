@@ -10,7 +10,9 @@
   <p>Абзац текста</p>
 
   <script>
-
+    // Каждую секунду скрывать/показывать абзац текста
+    let elem = document.querySelector("p");
+    setInterval(() => elem.hidden = !elem.hidden, 1000);
   </script>
 </body>
 </html>
