@@ -10,7 +10,20 @@
   <p>Разделитель</p>
   <hr>
   <script>
+    let div = document.createElement('div');
+    div.className = 'allert';
+    div.innerHTML = 'Сообщение';
+    // document.body.append(div); // добавляем в конец body
+    // document.body.prepend(div); // добавляем в начало body
+    // document.body.before(div); // добавляем перед body
+    // document.body.after(div); // добавляем после body
+    // document.querySelector('hr').after(div); // добавляем после hr
+    document.querySelector('hr').before(div); // добавляем перед hr
 
+    let p = document.createElement('p');
+    p.textContent = 'Важное сообщение!';
+    // div.append(p); // добавляем в конец div
+    div.replaceWith(p); // заменяем div на p
   </script>
 </body>
 </html>

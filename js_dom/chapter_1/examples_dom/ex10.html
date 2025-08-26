@@ -10,7 +10,19 @@
   <p title="Подсказка" class="text">Абзац текста</p>
 
   <script>
+    let elem = document.querySelector('p');
+    elem.setAttribute('id', 'new_text'); // Добавление нового атрибута
+    console.log(elem.getAttribute('title')); // "Подсказка"
+    console.log(elem.hasAttribute('class')); // true
+    elem.removeAttribute('title'); // Удаление атрибута
 
+    // Перебор всех атрибутов
+    for (let attr of elem.attributes) {
+      console.log(`${attr.name} = ${attr.value}`);
+      // console.log(attr);
+    }
+
+    console.dir(elem); // Просмотр всех свойств элемента
   </script>
 </body>
 </html>
