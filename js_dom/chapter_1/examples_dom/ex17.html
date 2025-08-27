@@ -28,8 +28,35 @@
       }
     }
 
+    // function createUl(obj) {
+    //   if (!Object.keys(obj).length) {
+    //     return;
+    //   }
+    //   let ul = document.createElement('ul');
+    //   for (let key in obj) {
+    //     let li = document.createElement('li');
+    //     if (typeof obj[key] === 'object') {
+    //       li.textContent = key;
+    //       let childrenUl = createUl(obj[key]);
+    //       if (childrenUl) {
+    //         li.appendChild(childrenUl);
+    //       }
+    //     } else {
+    //       li.textContent = key + ' ' + obj[key];
+    //     }
+    //     ul.appendChild(li);
+    //   }
+    //   return ul;
+    // }
+
+    // function createTree(container, obj) {
+    //   document.querySelector(container).append(createUl(obj));
+    // }
+
+    // createTree('body', data);
+
     function createUl(obj) {
-      if(!Object.keys(obj).lenght) {
+      if(!Object.keys(obj).length) {
         return;
       }
       let ul = document.createElement('ul');
@@ -40,7 +67,7 @@
         else 
           li.textContent = key;
         let childrenUl = createUl(obj[key]);
-        if(childreUl) {
+        if(childrenUl) {
           li.appendChild(childrenUl);
         }
        ul.appendChild(li); 
