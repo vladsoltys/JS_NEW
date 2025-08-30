@@ -13,14 +13,15 @@
 
   <script>
     function createCalendar (elem, year, month) {
-      elem = document.querySelector('.elem');
+      elem = document.querySelector(elem);
 
       let mon = month-1;
       let d = new Date(year, mon);
 
       let table = `
-      <caption>${month}.${year}</caption>
+      
       <table>
+        <caption>${month}.${year}</caption>
             <tr>
               <th>Пн</th>
               <th>Вт</th>
@@ -33,10 +34,28 @@
             <tr>
       `;
 
-      
+      for (let i = 0; i < getDay(d); i++) {
+        table += `<td></td>`;
+      };
 
+      while (d.getMonth() === mon) {
+        table += `<td>${d.getDate()}</td>`;
+
+        if (getDay(d) % 7 === 6) {
+          table += `</tr><tr>`;
+        }
+
+        d.setDate(d.getDate() + 1);
+      }
+
+      if(getDay(d) !== 0) {
+        for(i = getDay(d); i < 7; i++) {
+          table += `<td></td>`;
+        }
+      }
+ 
       table += `</tr></table>`;
-      elem.innerHTML = table;
+      elem.innerHTML += table;
     }
 
     function getDay (date) {
@@ -44,6 +63,14 @@
       if (day === 0) day = 7;
       return day - 1;
     }
+
+    function createYear(elem, year) {
+      for (let month = 1; month <= 12; month++) {
+        createCalendar(elem, year, month);
+      }
+    }
+
+      createYear('.container', 2024);
   </script>
 </body>
 
