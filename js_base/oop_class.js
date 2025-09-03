@@ -29,6 +29,46 @@ class People {
 
     this.room = +room
    }
+   static month = ["січня", "лютого", "березня", "квітня", "травня", "червня", "липня", "серпня", "вересня", "жовтня", "листопада", "грудня"]
+   
+   /**
+    * Вывести ФИО
+    * @return {String} Строка формата "Фамилия Имя Отчество"
+    */
+   getFio() {
+      return `${this.name.f} ${this.name.i} ${this.name.o}`
+   }
+   /**
+    * Вывести день рождения
+    * @return {String} Строка формата "24 июля 1997"
+    */
+   getBirthday() {
+      return `${this.date.d} ${People.month[this.date.m-1]} ${this.date.y}`
+   }
+   /**
+    * Вывести формат "Фамилия_Имя_Отчество.jpg"
+    * @param {String} extention разширение, например "jpg" или "pdf"
+    * @return {String} для названия изображения
+    */
+   getImgSrc(extention) {
+      return `${this.name.f}_${this.name.i}_${this.name.o}.${extention}`
+   }
+    /**
+    * Вывести формат "Фамилия_Имя_Отчество.jpg"
+    * @param {Boolean} allNumbers 
+    * @return {String} 
+    */
+   getNumberList(allNumbers) {
+      if(this.numbers.length === 0 || this.numbers[0].length === 0) {
+         return undefined
+      }
+      if(allNumbers) {
+         return this.numbers.join(", ");
+      } else {
+         return this.numbers[0];
+      }
+   }
 }
 
 let people = new People("Soltys Vladislav Igorevich", "12.09.1997", "1234, 3534, 3245", 43)
+console.log(people.getNumberList(true));
