@@ -13,7 +13,19 @@
   </div>
 
   <script>
+    let div = document.querySelector('div');
+    div.className = "alert text block" // перезаписывает все классы
 
+    // перебор всех классов через classList 
+    for(let name of div.classList) {
+      console.log(name)
+    }
+    
+    div.classList.add('elem') // добавляет класс elem
+    div.classList.remove('text') // удаляет класс text
+    div.classList.toggle('block1') // если класса нет - добавляет, если есть - удаляет
+    div.classList.contains('elem') // true или false - проверяет наличие класса
+    console.log(div.classList.contains('elem'))
   </script>
 </body>
 </html>

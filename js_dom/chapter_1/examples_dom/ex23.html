@@ -21,7 +21,12 @@
   </main>
 
   <script>
-
+    console.log(example.scrollWidth);  // ширина всего содержимого, включая невидимую часть 
+    console.log(example.scrollHeight); // высота всего содержимого, включая невидимую часть
+    console.log(example.clientHeight); // 120 (высота внутренней области, включая padding, но без полосы прокрутки и границ)
+    console.log(example.clientWidth);  // 320 (ширина внутренней области, включая padding, но без полосы прокрутки и границ)
+    console.log(example.offsetHeight); // 190 (высота элемента, включая padding, border и полосу прокрутки) 
+    console.log(example.offsetWidth);  // 350 (ширина элемента, включая padding, border и полосу прокрутки)
   </script>
 </body>
 </html>

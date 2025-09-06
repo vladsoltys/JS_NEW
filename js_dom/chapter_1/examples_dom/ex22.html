@@ -13,7 +13,20 @@
   </div>
 
   <script>
+    let div = document.querySelector('div');
+    div.style.color = 'black';
+    div.style.width = '300px';
+    div.style.backgroundColor = prompt('Введите цвет фона', 'yellow');
+    div.style.display = 'none';
 
+    // Через 3 секунды покажем блок
+    setTimeout(() => {
+      div.style.display = '';
+    }, 3000);
+
+    // Получаем вычисленные стили элемента (div) в виде объекта CSSStyleDeclaration 
+    let style = getComputedStyle(div);
+    // console.log(style);
   </script>
 </body>
 </html>
