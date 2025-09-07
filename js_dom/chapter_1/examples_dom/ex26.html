@@ -14,7 +14,23 @@
   
   <script src="../js/const.js"></script>
   <script>
+    function createTable(obj) {
+      for(let key in obj) {
+        let row = document.createElement('tr');
+        row.innerHTML = `<th colspan="2">${key}</th>`
+        document.querySelector('table').append(row)
+        for(let i=0; i<obj[key].length; i++) {
+          let row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${obj[key][i][0]}</td>
+            <td>${obj[key][i][1]}</td>
+          `
+          document.querySelector('table').append(row)
+        }
+      }
+    }
 
+    createTable(PHONE_NUMBER)    
   </script>
 </body>
 
