@@ -16,7 +16,29 @@
   </div>
 
   <script>
-    
+    function myTimer(seconds) {
+      let startDate = new Date();
+      let endDate = new Date();
+      endDate = endDate.setSeconds(endDate.getSeconds() + seconds);
+
+      let interval = setInterval(() => {
+        let currentDate = new Date();
+        let leftTime = Math.trunc((endDate - currentDate)/(endDate - startDate) * 100);
+        let passedTime = +(100 - leftTime);
+
+        document.querySelector(".timer-progressbar__fill").textContent = passedTime + "%"
+        document.querySelector(".timer-progressbar__fill").style.width = passedTime + "%"
+        document.querySelector(".timer-progressbar__empty").textContent = leftTime + "%"
+        document.querySelector(".timer-progressbar__empty").style.width = leftTime + "%"
+
+        if(leftTime === 0) {
+          clearInterval(interval);
+          document.querySelector(".timer-progressbar__empty").style.display = "none";
+        }
+      }, 1000)
+
+    }
+    myTimer(5)
   </script>
 </body>
 
