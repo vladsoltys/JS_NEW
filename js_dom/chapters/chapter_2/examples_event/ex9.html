@@ -22,7 +22,16 @@
   </div>
 
   <script>
+    let checkbox = document.querySelector('.theme-checkbox');
 
+    checkbox.onchange = function () {
+      // console.log(this)
+      if (this.checked) {
+        theme.setAttribute('href', '../css/dark.css');
+      } else {
+        theme.setAttribute('href', '../css/light.css');
+      }
+    }
   </script>
 </body>
 
