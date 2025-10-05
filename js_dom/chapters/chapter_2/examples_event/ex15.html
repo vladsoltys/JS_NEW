@@ -14,20 +14,25 @@
     Показать/Скрыть Email
   </button>
 
-  <form id="email" hidden>
-    Email: <input type="email">
-  </form>
-
   <button data-toggle-id="password">
     Показать/Скрыть Password
   </button>
+
+  <form id="email" hidden>
+    Email: <input type="email">
+  </form>
 
   <form id="password" hidden>
     Пароль: <input type="password">
   </form>
 
   <script>
-
+    document.addEventListener("click", function(e) {
+      let id = e.target.dataset.toggleId
+      if(!id) return
+      let elem = document.getElementById(id)
+      elem.hidden = !elem.hidden
+    })
   </script>
 </body>
 
